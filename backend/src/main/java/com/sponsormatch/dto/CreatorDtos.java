@@ -1,0 +1,3 @@
+package com.sponsormatch.dto;
+import jakarta.validation.constraints.*; import java.math.BigDecimal;
+public final class CreatorDtos { private CreatorDtos(){} public record ProfileRequest(String bio,@NotBlank String category,@NotBlank String platform,@NotNull @PositiveOrZero Long followers,@NotNull @DecimalMin("0.0") BigDecimal engagementRate,@NotBlank String location,@NotNull @DecimalMin("0.0") BigDecimal priceMin,@NotNull @DecimalMin("0.0") BigDecimal priceMax,String profileImage){} public record CreatorResponse(Long creatorId,String name,String bio,String category,String platform,Long followers,BigDecimal engagementRate,String location,BigDecimal priceMin,BigDecimal priceMax,String profileImage){} }
